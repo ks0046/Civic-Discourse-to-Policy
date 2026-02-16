@@ -1,64 +1,62 @@
-# Campaign Crystallizer
+# Civic Discourse to Policy
 
-A Streamlit web app that analyzes local Reddit discourse (e.g., from r/pittsburgh) to identify the most discussed civic issues and generate AI-assisted policy platform planks.
----
+A Streamlit web application that analyzes local Reddit discourse to identify the most discussed civic issues in a community and generates AI-assisted policy platform recommendations.
 
-## 🔍 Features
+Built as an independent project to explore how natural language processing can bridge the gap between public discourse and actionable policy, helping policymakers understand what communities actually care about.
 
-- 📊 **Visualize Most Discussed Local Issues** using bar charts  
-- ☁️ **Generate Word Cloud** from Reddit post content  
-- 🧠 **AI-Powered Platform Plank Generator** using OpenAI API  
-- 🔍 **Drill Down by Issue Category** with detailed Reddit post listings  
-- 🧱 **View Suggested Platform Planks** per issue category  
----
+**[Live App](https://pittsburghcampaigncrystallizer.streamlit.app/)**
 
-## 🚀 Live App
+## What It Does
 
-Link to the App: https://pittsburghcampaigncrystallizer.streamlit.app/
----
+The app scrapes and analyzes posts from local subreddits (e.g., r/pittsburgh) to:
 
-## 🗂️ Project Structure
+1. **Identify top civic issues** — categorizes 1,000+ posts into issue areas like housing, transportation, safety, and government services
+2. **Visualize community priorities** — generates bar charts and word clouds showing what residents discuss most
+3. **Generate policy recommendations** — uses OpenAI's API to produce policy platform planks grounded in real community concerns
+4. **Enable drill-down analysis** — lets users explore individual posts within each issue category
 
-campaign_crystallizer/
+## Tech Stack
+
+Python, Streamlit, Pandas, Plotly, WordCloud, OpenAI API
+
+## Project Structure
+
+```
 ├── data/
-│ ├── cleaned_posts.csv
-│ └── platform_planks.csv
+│   ├── cleaned_posts.csv
+│   └── platform_planks.csv
 ├── scripts/
-│ ├── clean_and_label.py
-│ ├── platform_plank_generator.py
-│ └── visualise.py
+│   ├── clean_and_label.py
+│   ├── platform_plank_generator.py
+│   └── visualise.py
 ├── .streamlit/
-│ └── secrets.toml (excluded from Git)
+│   └── secrets.toml (excluded from Git)
 ├── requirements.txt
 └── README.md
----
+```
 
-## 🛠️ How to Run Locally
+## Run Locally
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ks0046/Campaign_Crystallizer.git
-   cd Campaign_Crystallizer
-
-2. Install Required Dependencies
+```bash
+git clone https://github.com/ks0046/Civic-Discourse-to-Policy.git
+cd Civic-Discourse-to-Policy
 pip install -r requirements.txt
+```
 
-3. Add your OpenAI API key
-Create a .streamlit/secrets.toml file and paste:
+Create `.streamlit/secrets.toml` and add your OpenAI API key:
+
+```
 OPENAI_API_KEY = "your-api-key-here"
+```
 
-4. Launch the app
+Launch:
+
+```bash
 streamlit run scripts/visualise.py
+```
 
-🧩 Tech Stack
-Streamlit
-Pandas
-Plotly
-WordCloud
-OpenAI API
+## Author
 
-👩‍💻 Author
-Kriti Samnotra
-🎓 Carnegie Mellon University — Master of Science in Public Policy and Management, D.C. Track
-🔗 https://www.linkedin.com/in/kriti-samnotra/
-
+**Kriti Samnotra**
+MS Public Policy & Management (DC Track), Carnegie Mellon University
+[LinkedIn](https://www.linkedin.com/in/kriti-samnotra/)
